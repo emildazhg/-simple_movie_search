@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<h1>Movie Search </h1>
+
+<form  action="/" method="GET">
+  <div class="form-group row">
+    <label for="inputMovieTitle" class="col-sm-2 col-form-label">Search movies</label>
+    <div class="col-sm-10">
+      <input type="text" name="search" class="form-control" id="inputMovieTitle" placeholder="Search Movies..">
+    </div>
+  </div>
+</form>
+
+<h6>Total Result :<%= data["totalResults"]%></h6>
+<table class="table table-hover">
+  <thead class="thead-dark">
+   <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>imdbID</th>
+      <th>Type</th>
+      <th>Poster</th>
+   </tr>
+  <thead>
+  <tbody>
+   <% data["Search"].forEach(function(movie){ %>
+    <tr>
+      <td><%= movie["Title"] %></td>
+      <td><%= movie["Year"] %></td>
+      <td><%= movie["imdbID"] %></td>
+      <td><%= movie["Type"] %></td>
+      <td><img class="movie__poster" src=" <%= movie["Poster"] %> "></td>
+    </tr>    
+   <% }) %>
+   </tbody>
+</table>
+
+<% include partials/footer %>

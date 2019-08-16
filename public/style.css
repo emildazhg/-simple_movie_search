@@ -1,0 +1,11 @@
+body {
+  margin: 3rem;
+}
+
+h1 {
+  padding-bottom: 3rem;
+}
+
+.movie__poster {
+  height: 150px;
+}
